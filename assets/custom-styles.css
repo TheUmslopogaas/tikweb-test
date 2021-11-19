@@ -1,0 +1,544 @@
+@font-face {font-family: 'AmsiUltra';  src: url('https://cdn.shopify.com/s/files/1/0554/7301/2836/t/2/assets/amsipro-Ultra.ttf');}
+@font-face {font-family: 'AmsiBlack';  src: url('https://cdn.shopify.com/s/files/1/0554/7301/2836/t/2/assets/amsipro-Black.ttf');}
+@font-face {font-family: 'AmsiBold';  src: url('https://cdn.shopify.com/s/files/1/0554/7301/2836/t/2/assets/amsipro-Bold.ttf');}
+@font-face {font-family: 'AmsiSemiBold';  src: url('https://cdn.shopify.com/s/files/1/0554/7301/2836/t/2/assets/amsipro-SemiBold.ttf');}
+@font-face {font-family: 'AmsiRegular';  src: url(' https://cdn.shopify.com/s/files/1/0554/7301/2836/t/2/assets/amsipro-Regular.ttf');}
+@font-face {font-family: 'AmsiLight';  src: url(' https://cdn.shopify.com/s/files/1/0554/7301/2836/t/2/assets/amsipro-Light.ttf');}
+@font-face {font-family: 'AmsiXLight';  src: url(' https://cdn.shopify.com/s/files/1/0554/7301/2836/t/2/assets/amsipro-XLight.ttf');}
+@font-face {font-family: 'AmsiCondBold';  src: url(' https://cdn.shopify.com/s/files/1/0554/7301/2836/t/2/assets/amsipro-cond-Bold.ttf');}
+
+/* Global Styles
+*****************/
+.main-content {
+     min-height: 115px!important;
+}
+li {list-style: none;}
+.faux-select, body, button, input, select, textarea {
+  font-family: AmsiRegular;
+}
+b, strong {font-family: AmsiBlack;}
+.fullwidth-wrapper {padding: 100px 0;position: relative;}
+.c-wrapper {
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 0 30px;
+}
+.c-primary-title {
+     font-family: AmsiBold;
+     font-size: 36px;
+     margin-bottom: 10px;
+}
+.c-subtitle {
+     color: #fff;
+     font-size: 25px;
+     font-family: AmsiRegular;
+}
+.c-primary-desc {
+     font-family: AmsiSemiBOld;
+     font-size: 20px;
+}
+.c-custom-btn {
+     padding: 8px 20px 12px;
+     border-radius: 10px;
+     background: #FF94C3;
+     font-family: AmsiBold;
+     font-size: 22px;
+     color: #481964;
+     text-transform: uppercase;
+     text-align: center;
+     display: inline-block;
+}
+.stars {display: flex; gap: 5px;}
+
+/* Header 
+**********/
+#shopify-section-header {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 3;
+}
+.site-header-custom {
+     position: relative;
+}
+.announcement-link-text {
+     font-size: 17px;
+     font-family: AmsiSemiBold;
+}
+.site-nav__link, .site-nav__dropdown-link:not(.site-nav__dropdown-link--top-level) {
+     font-size: 17px!important;
+     margin: 0 20px;
+     font-family: AmsiBold;
+}
+.header-item--logo {
+     display: none;
+}
+.site-header {
+     padding: 15px 0;
+}
+.nav-left-logo {
+     position: absolute;
+     left: 0;
+     top: 0;
+     z-index: 99;
+}
+.nav-right-logo {
+     position: absolute;
+     right: 0;
+     top: 0;
+     z-index: 99;
+}
+.header-item--icons {display: none;}
+
+
+/* Custom Homepage top
+***********************/
+.custom-homepage-top {
+     background-color: #481964;
+     position: relative;
+     padding-top: 150px;
+}
+.homepage-top-1 {
+     position: relative;
+     z-index: 1;
+}
+.homepage-top-1 .c-wrapper {
+     display: flex;
+     gap: 80px;
+     position: relative;
+     z-index: 1;
+}
+.homepage-top-1 .left {flex-grow: 1;}
+.homepage-top-1 .right {max-width: 160px;}
+.homepage-top-1 .top-1-title {
+     font-size: 40px;
+     font-family: AmsiRegular;
+     color: #fff;
+     line-height: 1.4;
+     margin-bottom: 40px;
+     position: relative;
+}
+.homepage-top-1 .c-custom-btn {
+     width: 350px;
+     position: relative;
+}
+.homepage-top-1 .img-wrap {
+     max-width: 100%;
+     margin: -200px 0 0 auto;
+}
+.homepage-top-1 .img-wrap img {
+     width: 100%;
+}
+.homepage-top-1 .cards {
+     display: flex;
+     flex-direction: column;
+}
+.homepage-top-1 .card {
+     padding: 20px 0;
+     border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.homepage-top-1 .card-sub {
+     color: #FFDA3E;
+     font-family: AmsiBold;
+     font-size: 15px;
+     margin-bottom: 5px;
+}
+.homepage-top-1 .card-desc {
+     font-size: 20px;
+     color: #fff;
+}
+.top-1-bgshape {
+     position: absolute;
+     right: 0;
+     top: -180px;
+     width: 40%;
+}
+.top-1-bgshape img {
+     width: 100%;
+}
+/* top 2 */
+.homepage-top-2 {
+     margin-top: 100px;
+     position: relative;
+     z-index: 1;
+     margin-bottom: 300px;
+}
+.homepage-top-2 .c-wrapper {
+     position: relative;
+     z-index: 1;
+     display: flex;
+     justify-content: flex-end;
+}
+.top-2-vid {
+     margin: 20px 100px 0 0;
+}
+.homepage-top-2 .c-primary-title {
+     color: #fff;
+     margin-bottom: 30px;
+}
+.top-2-bgshape {
+     width: 55%;
+     position: absolute;
+     right: 0;
+     top: -250px;
+}
+.top-2-bgshape img {
+     width: 100%;
+}
+.top-2-fixdimg {
+     position: absolute;
+     left: 0;
+     top: 0;
+     max-width: 45%;
+}
+.top-2-fixdimg img {width: 100%;}
+
+/* top 3 */
+.homepage-top-3 {
+     margin: 50px 0 200px 0;
+     position: relative;
+     z-index: 1;
+}
+.homepage-top-3 .c-primary-title {margin-bottom: 50px;color: #fff;}
+.homepage-top-3 ul {margin: 0;max-width: 500px;}
+.homepage-top-3 ul li {
+     display: flex;
+     margin: 50px 0;
+     align-items: center;
+     gap: 40px;
+}
+.homepage-top-3 ul li p {
+     color: #fff;
+     font-size: 20px;
+     margin-bottom: 5px;
+}
+.homepage-top-3 .c-custom-btn {
+     width: 350px;
+     margin-left: auto;
+}
+.top-3-fixdimg {
+     position: absolute;
+     right: 0;
+     top: 0;
+     width: 700px;
+}
+.top-3-fixdimg img {width: 100%;}
+
+
+
+/* Custom Logolists Section
+*****************************/
+.custom-logolist-section {
+     background-color: #F6F3F7;
+     padding-top: 150px;
+     position: relative;
+     z-index: 1;
+}
+.c-logolist-top {
+     display: flex;
+     max-width: 1400px;
+     width: 95%;
+     margin: 0 auto;
+     border-radius: 20px;
+     overflow: hidden;
+     position: absolute;
+     top: -25%;
+     left: 50%;
+     transform: translateX(-50%);
+ }
+ .c-logolist-top .left {
+     flex: 1;
+     display: flex;
+     background: #FFDA3E;
+     gap: 20px;
+ }
+ .c-logolist-top .right {
+     flex: 1;
+     display: flex;
+     background: #FF849E;
+     gap: 20px;
+ }
+ .c-logolist-top .img-wrap {
+     flex-basis: 200px;
+     flex-grow: 0;
+     flex-shrink: 0;     
+ }
+ .c-logolist-top .img-wrap img {
+     display: block;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+ .c-logolist-top .texts {
+     padding: 20px 20px 20px 0;
+     font-size: 22px;
+     color: #481964;
+ }
+.c-logolists {
+     display: flex;
+     gap: 30px;
+     align-items: center;
+     justify-content: space-between;
+}
+.c-logolists .the-logo {
+     width: 120px;
+}
+.c-logolists .the-logo img {
+     width: 100%;
+}
+
+
+
+/* Custom Featured Collection
+*****************************/
+.custom-featured-collection .c-primary-title {
+     margin-bottom: 40px;
+     color: #371250;
+}
+.c-featured-collection-cards {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     gap: 3%;
+}
+.c-featured-collection-card {
+     flex-basis: 22%;
+     background-color: #FAF2F6;
+     border-radius: 10px;
+     position: relative;
+     margin-top: 140px;
+     padding: 80px 20px 20px;
+     text-align: center;
+}
+.custom-featured-collection .prod-img-wrap {
+     position: absolute;
+     top: -42%;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 60%;
+}
+.custom-featured-collection .prod-img-wrap img {
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+}
+.custom-featured-collection .prod-img-wrap .prod-img-exclammation {
+     position: absolute;
+     top: 0;
+     right: -20px;
+     width: 25px;
+     height: 25px;
+}
+.custom-featured-collection .prod-title {
+     font-family: AmsiCondBold;
+     font-size: 20px;
+}
+.custom-featured-collection .prod-tag {
+     color: #FD96C3;
+     font-size: 15px;
+     font-family: AmsiLight;
+}
+.custom-featured-collection .prod-price {
+     display: block;
+     border-radius: 8px;
+     background-color: #FD96C3;
+     padding: 13px 0;
+     font-size: 18px;
+     color: #fff;
+     text-transform: uppercase;
+     font-family: AmsiCondBold;
+     text-align: center;
+}
+.custom-featured-collection .c-custom-btn {
+     display: inline-block;
+     margin-top: 60px;
+     width: 250px;
+}
+
+
+
+/* Custom Homepage Bottom
+*************************/
+.custom-homepage-bottom {
+     background-color: #571070;
+     position: relative;
+}
+.custom-homepage-bottom .c-wrapper {
+     position: relative;
+     z-index: 2;
+     margin-bottom: 450px;
+}
+.custom-homepage-bottom .c-primary-title {
+     color: #FFDA3E;
+}
+.custom-homepage-bottom ul {
+     margin: 30px 0 30px;
+}
+.custom-homepage-bottom ul li {
+     list-style: none;
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     margin-bottom: 0px;
+}
+.custom-homepage-bottom .c-custom-btn {
+     width: 200px;
+     display: inline-block;
+}
+.custom-homepage-bottom .c-homepage-bottom-img {
+     text-align: right;
+     margin-top: -200px;
+}
+.custom-homepage-bottom .c-homepage-bottom-img img {
+     max-width: 800px;
+}
+.c-homepage-bottom-fixed-img {
+     position: absolute;
+     left: 0;
+     bottom: 50px;
+     max-width: 800px;
+     width: 45%;
+     z-index: 2;
+}
+
+
+/* Custom Review Section
+***********************/
+.custom-review-section {
+     background-color: #571076;
+     position: relative;
+     padding-top: 0;
+     z-index: 1;
+}
+.custom-review-section .c-review-section-bgshapa {
+     position: absolute;
+     top: 100px;
+     width: 100%;
+     transform: translateY(-100%);
+     z-index: -1;
+}
+.custom-review-section .c-primary-title {
+     text-align: center;
+     color: #fff;
+     margin-bottom: 50px;
+}
+.c-review-cards {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 3%;
+}
+.c-review-card {
+     display: block;
+     flex-basis: 31%;
+     max-width: 400px;
+     margin-bottom: 40px;
+}
+.c-review-card .img-wrap {
+     height: 240px;
+     overflow: hidden;
+     display: block;
+     margin-bottom: 20px;
+}
+.c-review-card .img-wrap img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+}
+.c-review-card .review-title {
+     font-family: AmsiSemiBold;
+     margin-bottom: 0;
+     color: #fff;
+     font-size: 18px;
+}
+.c-review-card .review-desc {
+     color: #fff;
+     font-size: 14px;
+     line-height: 1;
+     font-family: AmsiLight;
+}
+.c-review-card .review-bottom {
+     display: flex;
+     justify-content: space-between;
+     color: #FFDA3E;
+}
+
+/* Custom Newsletter 
+*********************/
+.custom-newsletter-section {display: flex;padding: 0;}
+.c-newsletter-social {
+     background-color: #f280b2; 
+     flex: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 30px;
+}
+.c-newsletter-text {
+     background-color: #ff94c3; 
+     flex: 1;
+     padding: 30px 50px;
+}
+.c-newsletter-social-text {
+     font-family: AmsiBold;
+     text-decoration: underline;
+     color: #fff;
+     font-size: 25px;
+}
+.c-newsletter-social-icons {
+     margin-left: 40px;
+     display: flex;
+     gap: 30px;
+     transform: translateY(5px);
+}
+.c-newsletter-text .c-primary-title {color: #fff;}
+.c-newsletter-text .c-primary-desc {color: #481964;margin-bottom: 30px ;}
+.c-newsletter-text .c-custom-btn {
+     display: block;
+     color: #fff;
+     background-color: #481964;
+     text-align: center;
+}
+
+/* Custom Single Button
+***********************/
+.custom-btn-section {
+     height: 250px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     background-color: #481964;
+     background-image: url('https://cdn.shopify.com/s/files/1/0554/7301/2836/files/single-btn-bg.svg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+
+/* Footer Styles
+*************** */
+.site-footer .grid {
+     display: flex;
+     justify-content: center;
+}
+.site-footer__linklist .menu-title {
+     margin-bottom: 10px;
+     font-family: AmsiBold;
+}
+.site-footer__linklist a {
+     font-size: 15px;     
+}
+.site-footer__linklist .menu-title a {
+     color: #643287;
+     font-size: 17px;     
+}
+.footer__logo {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+}
+.footer__logo a {
+     margin: 0 auto;
+}

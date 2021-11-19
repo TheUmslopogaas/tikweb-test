@@ -1,0 +1,139 @@
+{%- liquid
+  unless limit
+    assign limit = main_menu.links.size
+  endunless
+  unless offset
+    assign offset = 0
+  endunless
+-%}
+
+<ul
+  class="site-nav site-navigation small--hide"
+  {% unless disable_aria %}
+    role="navigation" aria-label="Primary"
+  {% endunless %}>
+  {%- for link in main_menu.links limit: limit offset: offset -%}
+    {%- liquid
+      assign has_dropdown = false
+      assign is_megamenu = false
+      if link.links != blank
+        assign has_dropdown = true
+        if link.levels > 1
+          assign is_megamenu = true
+        endif
+      endif
+    -%}
+
+    <li
+      class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}"
+      {% if has_dropdown %}aria-haspopup="true"{% endif %}>
+
+      <a href="{{ link.url }}" class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}">
+        {{ link.title }}
+      </a>
+      {%- if is_megamenu -%}
+        {%- assign previous_column_type = '' -%}
+        {%- assign animation_column = 1 -%}
+
+        <div class="site-nav__dropdown megamenu text-left">
+          <div class="page-width">
+            <div class="grid{% if dropdown_alignment == 'center' %} grid--center{% endif %}">
+              <div class="grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
+                {%- assign animation_column = animation_column | plus: 1 -%}
+
+                {%- for childlink in link.links -%}
+                  {%- liquid
+                    assign create_new_column = false
+
+                    if childlink.levels > 0 and forloop.index != 1
+                      assign create_new_column = true
+                    endif
+
+                    if childlink.levels == 0 and previous_column_type == 'full'
+                      assign create_new_column = true
+                    endif
+                  -%}
+
+                  {%- if create_new_column -%}
+                    </div><div class="grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
+                    {%- assign animation_column = animation_column | plus: 1 -%}
+                  {%- endif -%}
+
+                  {%- assign subcollection_drop = false -%}
+                  {%- if childlink.levels > 0 and childlink.url contains '/collections/' -%}
+                    {%- liquid
+                      assign lang_code_string = request.locale.iso_code | prepend: '/' | downcase
+                      assign subcollection_handle = childlink.url | remove: '/collections/' | remove: lang_code_string
+                      assign subcollection_drop = collections[subcollection_handle]
+                    -%}
+                    {%- if subcollection_drop.image != blank -%}
+                      <a
+                        href="{{ childlink.url }}"
+                        class="megamenu__colection-image"
+                        aria-label="{{collections[subcollection_handle].title}}"
+                        style="background-image: url({{ collections[subcollection_handle].image | img_url: '400x' }})"></a>
+                    {%- endif -%}
+                  {%- endif -%}
+
+                  <div class="h5">
+                    <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--top-level">{{ childlink.title }}</a>
+                  </div>
+
+                  {%- liquid
+                    if childlink.levels > 0
+                      assign previous_column_type = 'full'
+                    else
+                      assign previous_column_type = 'single'
+                    endif
+                  -%}
+
+                  {%- for grandchildlink in childlink.links -%}
+                    <div>
+                      <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">
+                        {{grandchildlink.title}}
+                      </a>
+                    </div>
+                  {%- endfor -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- elsif has_dropdown -%}
+        <ul class="site-nav__dropdown text-left">
+          {%- for childlink in link.links -%}
+            {%- liquid
+              assign has_sub_dropdown = false
+              if childlink.links != blank
+                assign has_sub_dropdown = true
+              endif
+            -%}
+
+            <li class="{% if has_sub_dropdown %} site-nav__deep-dropdown-trigger{% endif %}">
+              <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--second-level{% if has_sub_dropdown %} site-nav__dropdown-link--has-children{% endif %}">
+                {{ childlink.title | escape }}
+                {%- if has_sub_dropdown -%}
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"/></svg>
+                {%- endif -%}
+              </a>
+              {%- if has_sub_dropdown -%}
+                <ul class="site-nav__deep-dropdown">
+                  {%- for grandchildlink in childlink.links -%}
+                    <li>
+                      <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">{{ grandchildlink.title | escape }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+  <li class="site-nav__item site-nav__expanded-item">
+    <a href="#" class="site-nav__link site-nav__link--underline">
+      Kurv
+      <svg class="Icon Icon--cart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.1 13.6C4.165 13.6 3.4 14.365 3.4 15.3C3.4 16.235 4.165 17 5.1 17C6.035 17 6.8 16.235 6.8 15.3C6.8 14.365 6.035 13.6 5.1 13.6ZM0 0V1.7H1.7L4.76 8.16L3.57 10.2C3.485 10.455 3.4 10.795 3.4 11.05C3.4 11.985 4.165 12.75 5.1 12.75H15.3V11.05H5.44C5.355 11.05 5.27 10.965 5.27 10.88V10.795L6.035 9.34997H12.325C13.005 9.34997 13.515 9.00997 13.77 8.49997L16.83 2.975C17 2.805 17 2.72 17 2.55C17 2.04 16.66 1.7 16.15 1.7H3.57L2.805 0H0ZM13.6 13.6C12.665 13.6 11.9 14.365 11.9 15.3C11.9 16.235 12.665 17 13.6 17C14.535 17 15.3 16.235 15.3 15.3C15.3 14.365 14.535 13.6 13.6 13.6Z" fill="white"></path></svg>
+    </a></li>
+</ul>

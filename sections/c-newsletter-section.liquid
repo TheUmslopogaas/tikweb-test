@@ -1,0 +1,36 @@
+<div class="custom-newsletter-section fullwidth-wrapper">
+    <div class="c-newsletter-social">
+      <div class="c-newsletter-social-text">Følg SlikEkspressen:</div>
+      <div class="c-newsletter-social-icons">
+        <a href="#" class="social-icon">
+          <img width="40px" height="40px" src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/facebook.svg" alt="">
+        </a>
+        <a href="#" class="social-icon">
+          <img width="40px" height="40px" src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/instagram.svg" alt="">
+        </a>
+        <a href="#" class="social-icon">
+          <img width="50px" height="40px" src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/youtube.svg" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="c-newsletter-text">
+      <div class="c-primary-title">Nyhedsbrev</div>
+      <div class="c-primary-desc">Du har <strong>ALDRIG</strong> prøvet så sjovt et nyhedsbrev som vores!</div>
+      <a href="#" class="c-custom-btn">tilmeld</a>
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Custom Newsletter Section",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "main_menu_link_list",
+        "label": "Navigation",
+        "default": "main-menu"
+      }
+    ]
+  }
+{% endschema %}
